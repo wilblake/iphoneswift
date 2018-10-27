@@ -6,9 +6,13 @@
  Think of another real-world object and its properties. Make up some actions or behaviors that the object might be able to perform. Write them all in plain English first in a comment:
  */
  // Add your English-language description of the type here. Make sure to add // before each line of your comment description.
- //
- //
- //
+ // Recipe
+// complexity: Int
+// name : String
+// timeToCook: Int
+// ingredients [String]
+// func findIngredients () {}
+//
 
 /*:
  - callout(Exercise):
@@ -17,7 +21,16 @@
  */
 // Add your own struct here:
 
+ 
+ struct recipe {
+ let name: String
+ let complexity: Int8
+ var ingredients=[String]()
+ var timeToCook : Int
 
+ }
+
+let ceviche = recipe(name: "Ceviche", complexity: 7, ingredients: ["Fish"], timeToCook: 3)
 
 
 
