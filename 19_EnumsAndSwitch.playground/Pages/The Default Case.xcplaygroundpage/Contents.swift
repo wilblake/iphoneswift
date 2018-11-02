@@ -4,7 +4,7 @@
  This enum is used to represent how good something is:
 */
 enum Quality {
-    case bad, poor, acceptable, good, great
+    case bad, poor, acceptable, good, great, superlative
 }
 
 let quality = Quality.good
@@ -14,6 +14,8 @@ case .bad:
     print("That really won't do")
 case .poor:
     print("That's not good enough")
+case .good:
+    print("Very well, then")
 default:
     print("OK, I'll take it")
 }

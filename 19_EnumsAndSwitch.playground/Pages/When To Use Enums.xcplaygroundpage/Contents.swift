@@ -24,8 +24,9 @@
 */
 
 
+enum team { case red,blue}
 
-
+enum position { case leftNet, leftBaseline, rightNet, rightBaseline }
 
 
 //: On the next page, learn about comparing enums.\

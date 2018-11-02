@@ -13,7 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        colorView.backgroundColor = .black
+        //colorView.backgroundColor = .black
+        colorView.layer.borderWidth=5
+        colorView.layer.cornerRadius=20
+        colorView.layer.borderColor=UIColor.black.cgColor
+        
         updateColor()
     }
 
@@ -35,22 +39,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     
     @IBAction func switchChanged(_ sender: UISwitch) {
+        updateControls()
         updateColor()
         
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
+        updateControls()
     updateColor()
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
-        greenSlider.value = 0
+        
+        greenSlider.value = 1
         greenSwitch.isOn = false
-        redSlider.value = 0
+        redSlider.value = 1
         redSwitch.isOn = false
-        blueSlider.value = 0
+        blueSlider.value = 1
         blueSwitch.isOn = false
+        updateControls()
         updateColor()
+    }
+    func updateControls(){
+        redSlider.isEnabled=redSwitch.isOn
+        greenSlider.isEnabled=greenSwitch.isOn
+        blueSlider.isEnabled=blueSwitch.isOn
+        
     }
     func updateColor() {
         
@@ -61,12 +75,13 @@ class ViewController: UIViewController {
         {
             red = CGFloat(redSlider.value)
         }
-        else {red=0}
+        else { red = 0}
         if greenSwitch.isOn { green = CGFloat(greenSlider.value) }
-        else {green = 0}
+        else {green=0}
         if blueSwitch.isOn { blue = CGFloat(blueSlider.value)}
-        else {blue=0}
-        let color = UIColor(displayP3Red: red, green: green, blue: blue , alpha: 1)
+        else {blue = 0}
+        
+        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
     
     colorView.backgroundColor = color
     }
