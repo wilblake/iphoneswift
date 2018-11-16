@@ -27,6 +27,9 @@
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="choiceSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="zpn-Xe-uM3"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9L-PJ-GPD">
                                         <rect key="frame" x="104" y="43" width="42" height="20.5"/>
@@ -53,6 +56,9 @@
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="choiceSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="YM9-nb-ELs"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
