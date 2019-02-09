@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         bottomCaptionSegmentedControl.removeAllSegments()
         
         for choice in bottomChoices {
-            bottomCaptionSegmentedControl.insertSegment(withTitle: "choice.emoji", at: bottomChoices.count, animated: false)
+           bottomCaptionSegmentedControl.insertSegment(withTitle: choice.emoji, at: bottomChoices.count, animated: false)
         }
         bottomCaptionSegmentedControl.selectedSegmentIndex = 0
         updateLabels()
@@ -58,6 +58,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func choiceSelected(_ sender: Any) {
+        updateLabels()
     }
 }
 
