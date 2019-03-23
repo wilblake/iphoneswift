@@ -25,7 +25,7 @@ class ConversationViewController: UITableViewController {
             questionPath = IndexPath(row: count - 1, section: ConversationSection.history.rawValue)
         }
         // Inserts a row for the thinking cell, and for the newly added question (if that exists)
-        tableView.insertRows(at: [questionPath, ConversationSection.thinkingPath].flatMap { $0 }, with: .bottom)
+        tableView.insertRows(at: [questionPath, ConversationSection.thinkingPath].compactMap { $0 }, with: .bottom)
         tableView.scrollToRow(at: ConversationSection.askPath, at: .bottom, animated: true)
         // Waits for the thinking time to elapse before adding the answer
         DispatchQueue.main.asyncAfter(deadline: .now() + thinkingTime) {
